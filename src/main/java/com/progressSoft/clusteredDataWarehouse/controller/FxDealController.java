@@ -23,7 +23,6 @@ public class FxDealController {
 
     @PostMapping()
     public ResponseEntity<ApiResponse> createFxDeal(@Valid @RequestBody FxDealRequestDTO fxDealRequestDTO) {
-        log.info("here");
         FxDealResponseDTO fxDealResponseDTO = fxDealService.saveFxDeal(fxDealRequestDTO);
         return ResponseEntity.status(HttpStatus.OK).body(buildApiResponse(fxDealResponseDTO, HttpStatus.OK));
     }
