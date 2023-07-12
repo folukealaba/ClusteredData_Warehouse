@@ -13,10 +13,11 @@ public class ApiUtils {
                 .build();
     }
 
-    public static ApiResponse buildErrorResponse(String message, HttpStatus status) {
+    public static ApiResponse buildErrorResponse(Object d, HttpStatus status) {
         return ApiResponse.builder()
                 .message("error")
                 .status(status)
+                .data(d)
                 .build();
     }
 }
