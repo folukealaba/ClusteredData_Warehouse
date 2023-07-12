@@ -77,6 +77,7 @@ or simply run if you have make installed. the application runs on port 7070
 ```
 
 ### Success Response to get a deal by Id
+```json
 {
     "message": "successful",
     "status": "OK",
@@ -88,8 +89,10 @@ or simply run if you have make installed. the application runs on port 7070
         "dealAmount": 10000.00
     }
 }
+```
 
-```json --- Error Response received for saving an existing deal
+### Error Response received for saving an existing deal
+```json
 {
     "message": "error",
     "status": "BAD_REQUEST",
@@ -129,6 +132,6 @@ or simply run if you have make installed. the application runs on port 7070
     "pageSize": 10
   }
 }
-
+```
 TEST
 - Unit test in the test package. 
