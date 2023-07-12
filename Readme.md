@@ -93,7 +93,12 @@ or simply run if you have make installed. the application runs on port 7070
     }
 }
 
-
+### Error Response received for saving an existing deal
+{
+    "message": "error",
+    "status": "BAD_REQUEST",
+    "data": "Deal with this id already exist"
+}
 
 ```json --- To retrieve FxDeals
 {
