@@ -1,17 +1,13 @@
 
 # ClusteredData Warehouse
 
-This is to analyze fx deals by accepting deals and persisting in DB.
+This is to analyze fx deals by accepting deals and persisting in the DB.
 
 
 ##  Run - Docker
 ```sh
 docker-compose up
 ```
-
-2 / 2
-
-On the first run, the application will not run because MySQL database is still in the process of downloading. Please refrain from closing the application as it will automatically reconnect to synchronize with the database once the download is complete.
 
 ## Project Run
 #### How to run the project
@@ -34,14 +30,14 @@ or simply run if you have make installed. the application runs on port 7070
 
 #### Technology Used
 - SPRINGBOOT
-- MYSQL
+- POSTGRES
 - DOCKER
 
 # Project Packages
 #### Resource
-- POST - /api/v1/fxDeals - The endpoint saves fx deal to the DB
-- GET - /api/v1/fxDeals/{{dealId}} - The endpoint Get a fx deal by id retrieves a list of fxDeals from the DB
-- GET - /api/v1/fxDeals -  The endpoint retrieves a list of fxDeals from the DB
+- POST - /api/v1/fxDeals - The endpoint saves the fx deal to the DB
+- GET - /api/v1/fxDeals/{{dealId}} - The endpoint Get an fx deal by id retrieves a list of fxDeals from the DB
+- GET - /api/v1/fxDeals -  The endpoint retrieves a list of fxDeals from the DB with pagination
 
 ### Service and Impl
 - The business logic is in the serviceImpl package in the service package. The service class is an interface that implements the serviceImpl class.
@@ -93,12 +89,13 @@ or simply run if you have make installed. the application runs on port 7070
     }
 }
 
-### Error Response received for saving an existing deal
+```json --- Error Response received for saving an existing deal
 {
     "message": "error",
     "status": "BAD_REQUEST",
     "data": "Deal with this id already exist"
 }
+```
 
 ```json --- To retrieve FxDeals
 {
